@@ -1,0 +1,85 @@
+.features {
+  padding-top: 80px;
+  .inner {
+  }
+
+  .features-cont {
+    padding-top: 60px;
+  }
+
+  .features-list {
+  }
+
+  .features-item {
+    display: flex;
+    color: cl(white);
+    flex-flow: column-reverse;
+    @include overTab {
+      flex-flow: row;
+    }
+    &:nth-child(even) {
+      //oddは奇数、evenは偶数 場合分け
+      @include overTab {
+        flex-direction: row-reverse; //oddだけflex-direction: row-reverse;
+      }
+    }
+    + .features-item {
+      padding-top: 60px;
+      @include overTab {
+        padding-top: 0;
+      }
+    }
+    .image {
+      width: 100%;
+      @include overTab {
+        &:nth-child(odd) {
+          margin-right: 40px;
+        }
+        &:nth-child(even) {
+          margin-right: 0px;
+        }
+      }
+    }
+    .text {
+      padding-right: 28px;
+      padding-left: 28px;
+      padding-top: 40px;
+      @include overTab {
+        width: percentage(640 / 1280); //レスポンシブ対策でpxは使わずに割合で
+        margin-right: 40px;
+      }
+    }
+
+    .text {
+      flex: 1; //percentageの残り分を自動で算出
+    }
+    .title {
+      font-size: 18px;
+      color: cl(baige);
+      @include overTab {
+        font-size: 28px;
+      }
+    }
+    .desc {
+      font-size: 16px;
+      @include overTab {
+        font-size: 18px;
+        margin-top: 50px;
+      }
+    }
+    .image {
+      width: 100%;
+      @include overTab {
+        width: percentage(640 / 1280); //レスポンシブ対策でpxは使わずに割合で
+      }
+    }
+    .fortures-link {
+      padding-top: 60px;
+      text-align: center;
+      a {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}

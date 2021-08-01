@@ -1,0 +1,37 @@
+.breadcrumb {
+    padding-top: 20px;
+    padding-left: 20px;
+    @include overTab {
+        padding-left: 60px;
+    }
+    .breadcrumb-list {
+        display: flex;
+        font-size: 16px;
+        @include overTab {
+            font-size: 20px;
+        }
+    }
+    .breadcrumb-item {
+        color: cl(white);
+        + .breadcrumb-item {
+            position: relative;
+            padding-left: 14px;
+            &::before {
+                position: absolute;
+                content: ">";
+                color: cl(white);
+                font-size: 20px;
+                left: 2px;
+                line-height: 1;
+                @include overTab {
+                    top: 5px;
+                }
+            }
+        }
+        a {
+            color: cl(white);
+            text-decoration: underline;
+            display: block;
+        }
+    }
+}

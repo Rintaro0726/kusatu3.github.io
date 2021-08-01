@@ -1,0 +1,54 @@
+// COLORS
+// @include cl(black);
+//--------------------------------------------------
+
+$colors: (
+  white: #fff,
+  black: #000,
+  text: #333333,
+  grey: #ffffff,
+  lightgrey: #f2f2f2,
+  red: #ff0000,
+  primary: #4d0000,
+  gold: #b8860bea,
+  baige: #ffffdd,
+);
+
+@function cl($key) {
+  @return map-get($colors, $key);
+}
+
+// FONT
+// @inlcude TimesNewRoman;
+//--------------------------------------------------
+
+@mixin TimesNewRoman {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN",
+    "Yu Mincho", "MS PMincho", serif;
+}
+
+// RESPONSIVE
+// @include overTab
+//--------------------------------------------------
+
+@mixin overTab {
+  @media print, screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+// UTILITY
+//--------------------------------------------------
+
+._sp {
+  @include overTab {
+    display: none;
+  }
+}
+
+._pc {
+  display: none;
+  @include overTab {
+    display: block;
+  }
+}

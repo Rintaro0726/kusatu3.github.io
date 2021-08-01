@@ -1,0 +1,134 @@
+.header {
+  .header-fixed {
+    background-color: cl(primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; //トップページの動きを止める
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 51px;
+    padding-bottom: 19px;
+    z-index: 2;
+  }
+  .header-logo {
+    width: 56px;
+    margin-left: 30px;
+    height: 56px;
+  }
+
+  .nav-btn {
+    width: 52px;
+    height: 30px;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    outline: none;
+    position: relative;
+    right: 30px;
+    @include overTab {
+      display: none;
+    }
+    &.-active {
+      //ハンバーガーレスポンシブ
+      span {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transition: transform 0.3s ease;
+        &:first-child {
+          //斜めにbotan
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: cl(white);
+      display: block;
+      transition: transform 0.3s ease;
+      &:first-child {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &:last-child {
+        bottom: 0;
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #000000cc;
+    padding-top: 145px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    @include overTab {
+      //_base.scssを参照、この時
+      //position: static;
+      width: initial;
+      background-color: transparent; //背景色黒を無効
+      padding-top: 0;
+      z-index: 3;
+      left: inherit;
+      right: 0;
+      top: 38px;
+      opacity: 1;
+      visibility: visible; //上のhiddenで見えなくなっているのを可視化
+    }
+    &.-active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease;
+    }
+  }
+  .nav-wrap {
+  }
+
+  .nav-list {
+    text-align: center;
+    @include overTab {
+      display: flex;
+      margin-right: 40px;
+      padding-top: 20px;
+    }
+
+    .item {
+      + .item {
+        margin-top: 20px;
+        //+は二段目以降を指定
+        @include overTab {
+          margin-top: 0;
+          margin-left: 20px;
+          padding-bottom: 0;
+        }
+      }
+    }
+    a {
+      color: cl(white);
+      font-size: 24px;
+      @include overTab {
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.top {
+  background-image: url(../image/花.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 674px;
+  position: relative;
+  margin-top: 94px; //ヘッダー分下に動かす
+  @include overTab {
+    background-image: url(../image/花.jpg);
+  }
+  .top-title {
+    font-size: 50px;
+    color: cl(rgb(0, 0, 0));
+    text-align: center;
+    position: absolute; //中央よせはtop50%,left50%,transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    width: 100%; //改行されないようにする
+    transform: translateY(-50%) translateX(-50%);
+    @include overTab {
+      font-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.article {
+    .article-section {
+        padding-bottom: 120px;
+        > .inner {
+            padding-left: 30px;
+            padding-right: 30px;
+            @include overTab {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+        }
+    }
+    .article-cont {
+        padding-top: 50px;
+        max-width: 1160px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .article-list {
+
+    }
+    .article-item {
+        + .article-item {
+            margin-top: 30px;
+            @include overTab {
+                margin-top: 50px;
+            }
+        }
+        a {
+            display: flex;
+            flex-flow: column-reverse;
+            @include overTab {
+                flex-flow: row-reverse;
+                &:hover {
+                    .title {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .article-text {
+            color: cl(white);
+            margin-top: 15px;
+            @include overTab {
+                flex: 1;
+                margin-left: 20px;
+                margin-top: 0;
+            }
+            .time {
+                font-size: 16px;
+            }
+            .title {
+                text-decoration: underline;
+                margin-top: 15px;
+                font-size: 24px;
+                @include overTab {
+                    font-size: 28px;
+                }
+            }
+            .desc {
+                font-size: 18px;
+                margin-top: 25px;
+                @include overTab {
+                    margin-top: 20px;
+                    font-size: 24px;
+                }
+            }
+        }
+        .article-image {
+            position: relative;
+            @include overTab {
+                width: percentage(250 / 1140);
+            }
+            .category {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 120px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                text-align: center;
+                background-color: cl(primary);
+                color: cl(white);
+                display: inline-block;
+                font-size: 14px;
+                z-index: 1;
+            }
+            .image {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+                &::before {
+                    display: block;
+                    width: 100%;
+                    padding-top: percentage(181 / 254);  //画像高さ / 画像横幅
+                    content: '';
+                }
+                img {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    bottom: -10px;
+                    left: -10px;
+                    width: 100%;
+                    min-height: 100%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+    
+    .article-pager {
+        padding-top: 76px;
+        .inner {
+            display: flex;
+            justify-content: center;
+        }
+        .number,.dots {
+            width: 46px;
+            height: 46px;
+            span {
+                font-size: 16px;
+                color: cl(white);
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .number {
+            border: 2px solid cl(gold);
+            background-color: cl(black);
+            &.-current {
+                background-color: cl(gold);
+            }
+            + .number {
+                margin-left: 20px;
+            }
+            a {
+                display: block;
+                transition: background-color .3s ease;
+                &:hover {
+                    transition: background-color .3s ease;
+                    background-color: cl(gold);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>桜の店</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- なぜリセットcss -->
+    <link rel="stylesheet" href="/css/reset.css" >
+    <link rel="stylesheet" href="scss/style.css">
+    <!-- なんのプラグイン -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <!-- typeはどういう意味 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- deferどういう意味 -->
+    <script src="/js/wow.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-fixed">
+            <!-- なぜ/ -->
+            <h1 class="header-logo"><a href="/"><img src="/image/桜の花.jpeg" alt="桜店"></a></h1>
+            <!-- スマホ用パンクズ span３つで三本線 aria-labelはクリックした時に何があるか-->
+            <button type="button" class="nav-btn js-hamburger hamburger_btn"  id="app" aria-label="メニュー" aria-controls="nav" aria-expanded="false">
+                <span class="line line_01" v-bind:class="{'btn_line01':ActiveBtn}"></span>
+                <span class="line line_01" v-bind:class="{'btn_line02':ActiveBtn}"></span>
+                <span class="line line_01" v-bind:class="{'btn_line03':ActiveBtn}"></span>
+            </button>
+        </div>
+        <div class="nav header-nav menu">
+            <nav class="nav-wrap">
+                <ul class="nav-list">
+                    <li class="item"><a href="#">宿の予約</a></li>
+                    <li class="item"><a href="#">イベント</a></li>
+                    <li class="item"><a href="#">よくあるご質問</a></li>
+                    <li class="item"><a href="/contact/">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="top">
+            <div class="top-title">大正以来の当初の趣<br>ひっそりと佇む草津の宿</div>
+        </div>
+
+ <!-- sectionの中にはhタグを入れなきゃ入れないルールが存在 -->
+        <section class="features cmn-section -black">
+            <div class="inner wow animate__animated animate__fadeIn" data-wow-offset="10">
+                <h2 class="cmn-title">
+                    <!-- hタグの中にはpタグやdivタグを入れてはならない、入れるならspan -->
+                    <span class="main">宿のご案内</span>
+                    <!-- fは小文字 -->
+                    <span class="sub">features</span>
+                </h2>
+                <div class="features-cont">
+                    <ul class="features-list">
+                        <li class="features-item wow animate__animated animate__fadeIn" data-wow-offset="10">
+                            <div class="text">
+                                <div class="title">草津の自然と<br>大正以来から続く温泉が調和した宿。</div>
+                                <p class="desc">2025年9月、新浴場「露天薬師湯」が備えられた新しい別棟が完成しました。モダンな温泉施設と食事処、新しさと古さの不思議な調和の取れた和の空間でゆったりとした一時をおくつろぎください。</p>
+                                <!-- 共通ボタンが多いのでcmn-linkにしておく -->
+                                <div class="fortures-link cmn-link"><a href="#">お部屋について</a></div>
+                            </div>
+                            <div class="image"><img src="/image/宿.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="features-cont">
+                    <ul class="features-list">
+                        <li class="features-item wow animate__animated animate__fadeIn" data-wow-offset="10">
+                            <div class="text">
+                                <div class="title">草津ならではの季節の味覚をみなさまに。<br>丁寧に作りあげた逸品に舌鼓。</div>
+                                <p class="desc">お料理の基本コンセプトは「旬の素材を、地産地消で」季節ごとに変わる草津温泉ホテルリゾートならではの食をたっぷりとお召し上がりください。</p>
+                                <!-- 共通ボタンが多いのでcmn-linkにしておく -->
+                                <div class="fortures-link cmn-link"><a href="#">料理について</a></div>
+                            </div>
+                            <div class="image"><img src="/image/al.png" alt=""></div>
+                        </li>
+                    </ul>
+                <div class="features-cont">
+                    <ul class="features-list">
+                        <li class="features-item wow animate__animated animate__fadeIn" data-wow-offset="10">
+                            <div class="text">
+                                <div class="title">自然の癒し。<br>天然温泉から美と活力を。</div>
+                                <p class="desc">現代よりも少しだけゆったりした時間が流れる場所へ、ようこそ。歴史ある草津温泉では温泉に入るだけでなく、昭和レトロの香り漂う温泉街の散策も楽しめます。</p>
+                                <!-- 共通ボタンが多いのでcmn-linkにしておく -->
+                                <div class="fortures-link cmn-link"><a href="#">温泉の詳細</a></div>
+                            </div>
+                            <div class="image"><img src="/image/温泉.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="plan cmn-section -black">
+            <div class="inner">
+                <div class="inner wow animate__animated animate__fadeIn" data-wow-offset="10">
+                    <h2 class="cmn-title">
+                        <!-- hタグの中にはpタグやdivタグを入れてはならない、入れるならspan -->
+                        <span class="main">おすすめプラン</span>
+                        <!-- fは小文字 大文字だと大文字一つ一つでユーザーに伝えるようになってしまうため -->
+                        <span class="sub">recommend plan</span>
+                    </h2>
+                    <div class="rec">
+                        <div class="rec-slick rec-list" id="rec-slick">
+                            <div class="rec-item">
+                                <!-- seoを考えるとテキスト先 -->
+                                <div class="text">
+                                    <div class="title">温泉で湯ったりポカポカプラン</div>
+                                    <div class="plice">お値段：<span>1000円</span> / 人</div>
+                                </div>
+                                <div class="image">
+                                    <img src="/image/plan-rec05.png" alt="">
+                                </div>
+                            </div>
+                            <div class="rec-item">
+                                <div class="text">
+                                    <div class="title">ケーキ食べ放題</div>
+                                    <div class="plice">お値段：<span>2000円</span> / 人</div>
+                                </div>
+                                <div class="image">
+                                    <img src="/image/plan-rec01.png" alt="">
+                                </div>
+                            </div><div class="rec-item">
+                                <div class="text">
+                                    <div class="title">ドリンクバー</div>
+                                    <div class="plice">お値段：<span>3000円</span> / 人</div>
+                                </div>
+                                <div class="image">
+                                    <img src="/image/plan-rec02.png" alt="">
+                                </div>
+                            </div><div class="rec-item">
+                                <div class="text">
+                                    <div class="title">温泉で湯ったりポカポカプラン</div>
+                                    <div class="plice">お値段：<span>4000円</span> / 人</div>
+                                </div>
+                                <div class="image">
+                                    <img src="/image/plan-rec03.png" alt="">
+                                </div>
+                            </div><div class="rec-item">
+                                <div class="text">
+                                    <div class="title">温泉で湯ったりポカポカプラン</div>
+                                    <div class="plice">お値段：<span>5000円</span> / 人</div>
+                                </div>
+                                <div class="image">
+                                    <img src="/image/plan-rec04.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="blog cmn-section -black">
+            <div class="inner wow animate__animated animate__fadeIn" data-wow-offset="10">
+                <h2 class="cmn-title">
+                    <!-- hタグの中にはpタグやdivタグを入れてはならない、入れるならspan -->
+                    <span class="main">ブログ</span>
+                    <!-- fは小文字 大文字だと大文字一つ一つでユーザーに伝えるようになってしまうため -->
+                    <span class="sub">blog</span>
+                </h2>
+                <div class="blog-cont wow animate__animated animate__fadeIn" data-wow-offset="10">
+                    <!-- dtは要素の名前、ddは要素の説明 -->
+                    <dl class="blog-list">
+                        <div class="row">
+                            <dt>お知らせ</dt>
+                            <dd><a href="#">お知らせお知らせお知らせお知らせ</a></dd>
+                        </div>
+                        <div class="row">
+                            <dt>お知らせ</dt>
+                            <dd><a href="#">営業時間短縮のお知らせ</a></dd>
+                        </div><div class="row">
+                            <dt>お知らせ</dt>
+                            <dd><a href="#">GoToトラベルに関して</a></dd>
+                        </div><div class="row">
+                            <dt>お知らせ</dt>
+                            <dd><a href="#">明けましておめでとうございます</a></dd>
+                        </div><div class="row">
+                            <dt>お知らせ</dt>
+                            <dd><a href="#">当館でも地域共通クーポンご利用いただけます</a></dd>
+                        </div>
+                    </dl>
+                </div>    
+                <div class="blog-link cmn-link"><a href="#">もっと見る</a></div>
+                
+            </div>
+        </section>
+        
+        <section class="faq cmn-section">
+            <div class="inner wow animate__animated animate__fadeIn" data-wow-offset="10">
+                <h2 class="cmn-title">
+                    <!-- hタグの中にはpタグやdivタグを入れてはならない、入れるならspan -->
+                    <span class="main">よくある質問</span>
+                    <!-- fは小文字 大文字だと大文字一つ一つでユーザーに伝えるようになってしまうため  -faqは他のcmnとの差別化（全角大文字） -->
+                    <span class="sub -faq">faq</span>  
+                </h2>
+                <div class="faq-cont">
+                    <ul class="faq-list">
+                        <li class="faq-item">
+                            <a href="javascript:void(0)" class="title js-accordion"><p>Q. 最大で何名泊まれますか？</p></a>
+                            <div class="detail"><p>A. 大人の方が最大で6名様までお泊まりいただけます。ご用意できるお布団が最大で6名様分となります。
+
+                            </p></div>
+                        </li>
+                        <li class="faq-item">
+                            <a href="javascript:void(0)" class="title js-accordion"><p>Q. いつから予約出来ますか？</p></a>
+                            <div class="detail"><p>A. 6ヶ月前からご予約できます。6ヶ月以前の予約についてもご相談ください。</p></div>
+                        </li><li class="faq-item">
+                            <a href="javascript:void(0)" class="title js-accordion"><p>Q. 予約確定後にキャンセルは出来ますか？</p></a>
+                            <div class="detail"><p>A. キャンセルは可能ですが、ご予約時期によりキャンセル料が発生いたします。</p></div>
+                        </li><li class="faq-item">
+                            <a href="javascript:void(0)" class="title js-accordion"><p>Q. チェックイン・チェックアウトの時間を教えてください。</p></a>
+                            <div class="detail"><p>A. チェックインの時間は15:00～17:00です。もし17:00を過ぎるようでしたら、ご一報を入れていただくよう お願いしております。チェックアウトの時間は翌朝10:00でございます。</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="inner wow animate__animated animate__fadeIn" data-wow-offset="10">
+            <nav class="nav-wrap">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#">利用規約</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">プライバシーポリシー</a>
+                    </li><li class="nav-item">
+                        <a href="#">個人商取引法に基づく表記</a>
+                    </li><li class="nav-item">
+                        <a href="#">お問い合わせ</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer-logo"><img src="/image/桜の花.jpeg" alt=""></div>
+            <p class="copyright">Copyright (c) 2021 Rintaro`s portforio All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

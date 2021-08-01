@@ -1,0 +1,175 @@
+.contact {
+  .contact-thanks {
+    margin-left: 20px;
+    margin-right: 20px;
+    .thanks-text {
+      padding-top: 75px;
+      color: cl(white);
+      text-align: center;
+      padding-bottom: 110px;
+      p {
+        font-size: 16px;
+        @include overTab {
+          font-size: 20px;
+        }
+      }
+    }
+    .link {
+      padding-top: 50px;
+      a {
+        color: cl(white);
+        text-decoration: underline;
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .contact-section {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+  .formarea {
+    margin-left: auto;
+    margin-right: auto;
+    width: percentage(315 / 375);
+    @include overTab {
+      max-width: 900px;
+      width: percentage(900 / 1280);
+    }
+  }
+  .contact-form {
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    .content {
+    }
+    dl {
+    }
+    .row {
+      + .row {
+        margin-top: 20px;
+      }
+    }
+    dt {
+      label {
+        color: cl(white);
+        font-size: 16px;
+      }
+    }
+    dd {
+      input,
+      textarea {
+        width: calc(100% - 22px);
+        border: 1px solid cl(white);
+        margin-top: 12px;
+        padding-left: 20px;
+        font-size: 12px;
+      }
+      input {
+        height: 50px;
+      }
+      textarea {
+        height: 240px;
+        padding-top: 18px;
+      }
+    }
+  }
+
+  .privacy-policy {
+    color: cl(white);
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include overTab {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+    .link {
+      color: cl(white);
+      text-decoration: underline;
+    }
+    .checkbox {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      p {
+        padding-top: 2px;
+        padding-left: 10px;
+        @include overTab {
+          padding-left: 20px;
+        }
+      }
+    }
+    .check {
+      position: relative;
+      input {
+        width: 20px;
+        height: 20px;
+        &#agree {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          appearance: none;
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          font: inherit;
+          outline: none;
+          &::before {
+            background: #fff;
+            border: 1px solid #707070;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            margin-top: -8px;
+            position: absolute;
+            top: 8px;
+          }
+          &::after {
+            border-right: 2px solid cl(gold);
+            border-bottom: 2px solid cl(gold);
+            content: "";
+            display: block;
+            height: 13px;
+            left: 6px;
+            margin-top: -6px;
+            opacity: 0;
+            position: absolute;
+            top: 40%;
+            transform: rotate(45deg);
+            width: 6px;
+          }
+          &:checked {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .submit-btn {
+    text-align: center;
+    padding-top: 48px;
+    input {
+      display: block;
+      color: cl(white);
+      background-color: cl(gold);
+      display: flex;
+      width: 155px;
+      margin: 0 auto;
+      height: 37px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

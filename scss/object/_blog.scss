@@ -1,0 +1,60 @@
+.blog {
+  padding-top: 80px;
+  .inner {
+    .blog-cont {
+      margin-left: 30px;
+      margin-right: 30px;
+      @include overTab {
+        margin-left: 70px;
+        margin-right: 70px;
+      }
+    }
+    .blog-list {
+      padding-top: 60px;
+      .row {
+        display: flex;
+        + .row {
+          //２つ目以降の row要素を指定
+          margin-top: 30px;
+        }
+      }
+      dt {
+        font-size: 13px;
+        color: cl(white);
+        background-color: cl(primary);
+        width: 157px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        width: 75px;
+        @include overTab {
+          width: 157px;
+          font-size: 14px;
+        }
+      }
+      dd {
+        flex: 1; //flex: 1;が指定されてないところは固定
+        a {
+          color: cl(white);
+          font-size: 16px;
+          text-decoration: underline;
+          @include overTab {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    .blog-link {
+      margin-top: 30px;
+      @include overTab {
+        margin-top: 50px;
+      }
+      a {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.faq {
+  padding-top: 80px;
+  background-color: cl(black);
+  .inner {
+    .faq-cont {
+      padding-left: 30px; //レスポンシブかしても余白作れる
+      padding-right: 30px;
+      padding-top: 60px;
+      padding-bottom: 80px;
+      .faq-list {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        .faq-item {
+          > a {
+            background-color: cl(white);
+            display: block; //aはインライン要素なので指定
+            padding: 14px;
+            border: 1px solid #e5e5e5;
+            opacity: 1;
+            @include overTab {
+              text-align: center;
+              padding-top: 20px;
+              padding-bottom: 20px;
+            }
+          }
+          .detail {
+            background-color: #f2f2f2;
+            padding: 14px;
+            border: 1px solid #e5e5e5;
+            opacity: 1;
+            display: none;
+            @include overTab {
+              padding: 25px 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

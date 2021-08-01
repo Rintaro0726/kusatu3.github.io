@@ -1,0 +1,218 @@
+.single {
+    color: cl(white);
+    padding-top: 102px;
+    .single-section {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 120px;
+        @include overTab {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 160px;
+            padding-top: 50px;
+        }
+    }
+    .inner {
+        margin-left: auto;
+        margin-right: auto;
+        @include overTab {
+            max-width: 1160px;
+        }
+    }
+    .entry {
+        @include overTab {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .single-title {
+        padding-bottom: 25px;
+        @include overTab {
+            padding-bottom: 50px;
+        }
+        .category {
+            background-color: cl(primary);
+            padding-top: 6px;
+            padding-bottom: 6px;
+            width: 120px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main {
+            margin-top: 25px;
+            font-size: 30px;
+            @include overTab {
+                margin-top: 44px;
+                font-size: 36px;
+            }
+        }
+    }
+    .single-entry {
+        @include overTab {
+            // width: percentage(830 / 1160);
+            flex: 1;
+        }
+    }
+    .wrapper {
+
+    }
+    .info {
+        display: flex;
+        justify-content: space-between;
+        .sns {
+            a {
+                font-size: 20px;
+                width: 120px;
+                background-color: #00ACED;
+                border-radius: 3px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: cl(white);
+            }
+            img {
+                width: 25px;
+                margin-right: 6px;
+                margin-bottom: -3px;
+            }
+        }
+        .time {
+            font-size: 16px;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: -3px;
+            @include overTab {
+                margin-bottom: -6px;
+                font-size: 24px;
+            }
+        }
+    }
+    .body {
+        padding-top: 30px;
+        .image {
+
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: cl(blue);
+            padding: 20px;
+            font-size: 28px;
+            @include overTab {
+                margin-top: 40px;
+                margin-bottom: 40px;
+                padding: 14px 20px;
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 26px;
+            border-left: 8px solid cl(blue);
+            padding-left: 14px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        h4 {
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @include overTab {
+                font-size: 26px;
+            }
+        }
+        a,p,ol,ul {
+            font-size: 18px;
+            @include overTab {
+                font-size: 24px;
+            }
+        }
+        a {
+            color: cl(white);
+            text-decoration: underline;
+            @include overTab {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            @include overTab {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        ul,ol {
+            padding-left: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: disc;
+        }
+        ol {
+            list-style-type: decimal;
+        }
+    }
+
+    .single-widget {
+        padding-top: 48px;
+        @include overTab {
+            padding-top: 0;
+            width: 270px;
+            margin-left: percentage(60 / 1160);
+        }
+        .widget-secion {
+            + .widget-secion {
+                padding-top: 40px;
+                @include overTab {
+                    padding-top: 30px;
+                }
+            }
+            > .title {
+                font-size: 21px;
+                width: 100%;
+                height: 60px;
+                background-color: cl(blue);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .list {
+            margin-top: 30px;
+        }
+        .item {
+            + .item {
+                margin-top: 40px;
+            }
+            a {
+                color: cl(white);
+                text-decoration: underline;
+                display: flex;
+                @include overTab {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+            .image {
+                width: percentage(100 / 315);
+                @include overTab {
+                    width: 100px;
+                }
+            }
+            .title {
+                flex: 1;
+                margin-left: 17px;
+                font-size: 12px;
+                @include overTab {
+                }
+            }
+        }
+    }
+}

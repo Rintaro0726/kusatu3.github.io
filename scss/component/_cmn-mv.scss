@@ -1,0 +1,10 @@
+.cmn-mv {
+  background-image: url(../image/cmn-bg_sp.png);
+  background-size: cover;
+  background-position: center;
+  height: 296px;
+  margin-top: 94px;
+  @include overTab {
+    background-image: url(../image/cmn-bg.png);
+  }
+}
